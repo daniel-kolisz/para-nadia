@@ -16,7 +16,7 @@ PICTURE: corazón grande ilustrado que late, sobre, tarjetas de rasca
 COLOUR and TYPE: frambuesa dominante, rosa chicle de apoyo, amarillo mantequilla de acento; Fredoka + Nunito + Caveat para la carta
 LAYOUT: una tarjeta centrada por pantalla, puntos de progreso arriba
 */
-:root{color-scheme:light dark;--bg:light-dark(#f4f1ea,#1b1a17);--card:light-dark(#fffdf8,#262420);--ink:light-dark(#3d362e,#f1ece2);--soft:light-dark(#7a7064,#b3a999);--rasp:#f2c14e;--hl:#ffdf8a;--rasp2:light-dark(#a87a1c,#f6d27a);--pink:light-dark(#e9e2d3,#3a362f);--sun:#f2c14e;--accd:#c9992b;--ochre:light-dark(#b07d12,#f2c14e);--terra:light-dark(#a8553a,#e59a7c)}
+:root{color-scheme:light dark;--bg:light-dark(#f4f1ea,#1b1a17);--card:light-dark(#fffdfb,#252422);--ink:light-dark(#3d362e,#f1ece2);--soft:light-dark(#7a7064,#b3a999);--rasp:#f2c14e;--hl:#ffdf8a;--rasp2:light-dark(#a87a1c,#f6d27a);--pink:light-dark(#e9e2d3,#3a362f);--sun:#f2c14e;--accd:#c9992b;--ochre:light-dark(#b07d12,#f2c14e);--terra:light-dark(#a8553a,#e59a7c)}
 :root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
 *{box-sizing:border-box;min-width:0}
 html,body{height:100%}
@@ -80,7 +80,7 @@ button.ghost{background:transparent;color:var(--rasp2);box-shadow:inset 0 0 0 2p
 .hw svg.bgh{position:absolute;inset:0;width:100%;height:100%;opacity:0;transition:opacity 1.2s .4s}
 .hw.on svg.bgh{opacity:1}
 .w{position:absolute;white-space:nowrap;font-family:Fredoka,Nunito,sans-serif;font-weight:600;color:var(--rasp2);opacity:0;transform:translate(var(--dx),var(--dy)) scale(.2);transition:transform 1s cubic-bezier(.2,1.25,.4,1),opacity .5s;cursor:pointer;line-height:1}
-.w:nth-child(3n){color:var(--ochre)}.w:nth-child(5n){color:var(--terra)}
+.w:nth-child(3n){color:var(--ochre)}.w:nth-child(5n){color:var(--accd)}
 .w.es{color:var(--ink)}
 .hw.on .w{opacity:1;transform:none}
 .tap{position:absolute;left:calc(50% - 60px);top:calc(46% - 60px);background:none;box-shadow:none;padding:0;width:120px;height:120px;display:grid;place-items:center;animation:beat 1.3s infinite;z-index:2;transition:opacity .4s}
@@ -107,14 +107,15 @@ button.ghost{background:transparent;color:var(--rasp2);box-shadow:inset 0 0 0 2p
 .tin:focus{outline:none;border-color:var(--sun)}
 button.link{background:none;box-shadow:none;color:var(--soft);font:600 14px Nunito;text-decoration:underline;min-height:40px;padding:0 10px}
 #album{max-width:640px;padding-top:64px}
-.book{perspective:2000px;width:min(440px,100%);aspect-ratio:3/4.15;margin:8px auto 4px;position:relative;user-select:none;-webkit-user-select:none}
+.book{perspective:2000px;width:min(440px,100%);aspect-ratio:3/4.15;margin:8px auto 26px;position:relative;isolation:isolate;user-select:none;-webkit-user-select:none}
+.book::after{content:"";position:absolute;inset:3px 2px -5px 5px;border-radius:4px 16px 16px 4px;background:color-mix(in srgb,var(--rasp) 25%,var(--card));box-shadow:0 14px 24px -12px rgba(0,0,0,.35);z-index:-1}
 .leaf{position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;transition:transform .75s cubic-bezier(.3,.75,.25,1);touch-action:pan-y}
 .leaf.drag{transition:none}
 .leaf.gone{visibility:hidden}
 .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px 16px 16px 4px;overflow:hidden}
-.paper{background:light-dark(#fffaf0,#2b2823);background-image:radial-gradient(light-dark(#efe5cf,#38342d) 1px,transparent 1.2px),linear-gradient(90deg,rgba(0,0,0,.13),rgba(0,0,0,0) 7%);background-size:18px 18px,100% 100%;box-shadow:0 12px 28px -14px rgba(50,35,10,.45),inset 0 0 0 1px light-dark(#eadfc6,#3a362f)}
-.backf{transform:rotateY(180deg);background:light-dark(#f3ead6,#24211c)}
-.cover{background:linear-gradient(135deg,var(--hl),var(--rasp));box-shadow:0 16px 30px -14px rgba(80,55,0,.6),inset 0 0 0 1px rgba(0,0,0,.08);display:grid;place-items:center;text-align:center;color:#2b2620;cursor:pointer}
+.paper{background:light-dark(color-mix(in srgb,var(--hl) 12%,#fffdfa),color-mix(in srgb,var(--rasp) 9%,#252422));background-image:radial-gradient(color-mix(in srgb,var(--rasp) 35%,transparent) 1px,transparent 1.2px),linear-gradient(90deg,rgba(0,0,0,.13),rgba(0,0,0,0) 7%);background-size:18px 18px,100% 100%;box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--rasp) 30%,transparent)}
+.backf{transform:rotateY(180deg);background:light-dark(color-mix(in srgb,var(--hl) 22%,#f7f5f2),color-mix(in srgb,var(--rasp) 6%,#201f1d))}
+.cover{background:linear-gradient(135deg,var(--hl),var(--rasp));box-shadow:inset 0 0 0 1px rgba(0,0,0,.08);display:grid;place-items:center;text-align:center;color:#2b2620;cursor:pointer}
 .cover::before{content:"";position:absolute;inset:14px 14px 14px 22px;border:2px solid rgba(43,38,32,.35);border-radius:6px 12px 12px 6px}
 .cover::after{content:"";position:absolute;left:0;top:0;bottom:0;width:16px;background:linear-gradient(90deg,rgba(0,0,0,.22),rgba(0,0,0,0))}
 .cover .ct{font:700 clamp(30px,8vw,40px)/1.02 Fredoka;margin:10px 26px 8px;text-wrap:balance}
@@ -129,16 +130,16 @@ button.link{background:none;box-shadow:none;color:var(--soft);font:600 14px Nuni
 .slots{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:12px 12px;min-height:0}
 .slot{all:unset;display:grid;grid-template-rows:minmax(0,1fr) auto;gap:4px;min-height:0;cursor:pointer;text-align:center;border-radius:10px}
 .slot:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
-.hole{position:relative;border:2px dashed light-dark(#d9c9a3,#5a5346);border-radius:10px;background:light-dark(rgba(242,193,78,.08),rgba(242,193,78,.05));display:grid;place-items:center;min-height:0}
+.hole{position:relative;border:2px dashed color-mix(in srgb,var(--rasp) 60%,transparent);border-radius:10px;background:color-mix(in srgb,var(--rasp) 8%,transparent);display:grid;place-items:center;min-height:0}
 .hole .n{position:absolute;top:5px;left:8px;font:600 12px Fredoka;color:var(--soft)}
-.hole .plus{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:light-dark(#f6e7bf,#3a3326);color:var(--ochre)}
+.hole .plus{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb,var(--rasp) 25%,transparent);color:var(--ochre)}
 .stk{position:absolute;inset:4px;background:#fff;padding:5px;border-radius:6px;box-shadow:0 4px 10px -3px rgba(40,30,10,.35);transform:rotate(var(--r))}
 .stk img{width:100%;height:100%;object-fit:cover;border-radius:3px;display:block}
 .by{position:absolute;right:-6px;bottom:-6px;width:24px;height:24px;border-radius:50%;background:var(--sun) center/cover;font:700 12px/24px Fredoka;color:#2b2620;box-shadow:0 0 0 2px #fff}
 .cap{font:700 13px/1.2 Nunito;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:0}
 .dt{font:600 12px Nunito;color:var(--soft)}
 .pfoot{font:600 12px Fredoka;color:var(--soft);text-align:right}
-.pager{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}
+.pager{position:relative;z-index:5;display:flex;align-items:center;justify-content:center;gap:12px;margin-top:12px}
 .pager span{font:600 15px Fredoka;color:var(--soft);min-width:9.5em}
 .pager button{min-height:44px;width:48px;padding:0}
 .pager button:disabled{opacity:.35;cursor:default}
@@ -148,7 +149,7 @@ button.link{background:none;box-shadow:none;color:var(--soft);font:600 14px Nuni
 @media(min-width:601px){.modal{align-items:center}}
 .sheet{background:var(--card);border-radius:24px;width:min(440px,100%);max-height:92vh;overflow:auto;padding:20px;text-align:center;animation:pop .35s cubic-bezier(.2,1.3,.4,1)}
 .sheet h3{font:700 24px Fredoka;margin:2px 0 12px;color:var(--rasp2)}
-.prev{position:relative;width:min(240px,70vw);aspect-ratio:1;margin:0 auto 12px;border-radius:14px;border:2px dashed light-dark(#d9c9a3,#5a5346);display:grid;place-items:center;overflow:hidden;cursor:pointer;color:var(--soft);font:600 15px Fredoka;background:var(--bg)}
+.prev{position:relative;width:min(240px,70vw);aspect-ratio:1;margin:0 auto 12px;border-radius:14px;border:2px dashed color-mix(in srgb,var(--rasp) 60%,transparent);display:grid;place-items:center;overflow:hidden;cursor:pointer;color:var(--soft);font:600 15px Fredoka;background:var(--bg)}
 .prev img{width:100%;height:100%;object-fit:cover}
 .fl{display:grid;gap:6px;text-align:left;margin:10px 0;font:600 14px Nunito;color:var(--soft)}
 .fl .tin{width:100%;text-align:left;font-size:16px}
